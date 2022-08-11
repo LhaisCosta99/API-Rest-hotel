@@ -4,7 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -23,5 +25,8 @@
     "path": "^0.12.7",
     "sqlite3": "^5.0.11",
     "url": "^0.11.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
   }
 }
