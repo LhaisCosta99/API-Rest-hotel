@@ -3,12 +3,12 @@ import DAO from "./DAO.js";
 class HospedesDAO {
     static async criaTabelaHospedes(){
         const query = `
-            CREATE TABLE hospedes IF NOT EXIST(
-                id,
-                nome,
-                cpf,
-                email,
-                telefone
+        CREATE TABLE IF NOT EXISTS hospedes (
+                id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                nome VARCHAR,
+                cpf VARCHAR,
+                email VARCHAR,
+                telefone VARCHAR
             )
         `
 
@@ -17,3 +17,5 @@ class HospedesDAO {
         return resposta
     }
 }
+
+export default HospedesDAO
