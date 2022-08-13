@@ -3,6 +3,15 @@ import HospedesModel from "../model/HospedesModel.js"
 
 class HospedesController{
     static rotas(app){
+        app.get("/hospedes", async(req, res)=>{
+            try {                
+                const hospedes = await HospedesDAO.listarTodosOsHospedes()
+                res.status(200).json(hospedes)
+            } catch (erro) {
+                res.status(404).json(erro.message)
+            }
+        })
+
         app.post("/hospedes", async (req, res) => {
             const hospede = new HospedesModel(req.body.nome, req.body.cpf, req.body.email, req.body.telefone)
             try {

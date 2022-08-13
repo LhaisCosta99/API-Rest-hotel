@@ -11,11 +11,11 @@ app.listen(port, () => {
     console.log(`http://localhost:${port}`)
 })
 
+HospedesController.rotas(app)
+
 try {
     await HospedesDAO.criaTabelaHospedes()
     console.log("Tabela hospedes criada com sucesso!")
 } catch (erro) {
     console.log(erro.message)
 }
-
-HospedesController.rotas(app)

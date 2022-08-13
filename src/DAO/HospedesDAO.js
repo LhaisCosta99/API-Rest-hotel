@@ -27,6 +27,15 @@ class HospedesDAO {
 
         return resposta
     }
+
+    static async listarTodosOsHospedes(){
+        const query = `
+        SELECT * FROM hospedes
+        `
+        const resposta = await DAO.buscarTodosOsRegistros(query)
+
+        return resposta
+    }
 }
 
 export default HospedesDAO
