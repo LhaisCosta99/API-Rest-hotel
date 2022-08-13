@@ -16,6 +16,17 @@ class HospedesDAO {
         
         return resposta
     }
+    
+    static async criarHospede(body){
+        const query = `
+        INSERT INTO hospedes (nome, cpf, email, telefone) values (?,?,?,?)
+        `
+        const entidade = [body.nome, body.cpf, body.email, body.telefone]
+
+        const resposta = await DAO.CriarRegistro(query, entidade)
+
+        return resposta
+    }
 }
 
 export default HospedesDAO
