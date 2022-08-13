@@ -36,6 +36,33 @@ class HospedesDAO {
 
         return resposta
     }
+
+    static async listarHospedesPorID(id){
+        const query = `
+         SELECT * FROM hospedes WHERE id = ?`
+        
+        const resposta = await DAO.listarHospedesPorID(id, query)
+        
+        return resposta
+    }
+
+    static async deletarHospedesPorID(id){
+        const query = `
+         DELETE * FROM hospedes WHERE id = ?`
+        
+        const resposta = await DAO.deletarHospedesPorID(id, query)
+        
+        return resposta
+    }
+
+    static async atualizarHospedesPorID(id){
+        const query = `
+         UPDATE * FROM hospedes WHERE id = ?`
+        
+        const resposta = await DAO.atualizarHospedesPorID(id, query)
+        
+        return resposta
+    }
 }
 
 export default HospedesDAO
