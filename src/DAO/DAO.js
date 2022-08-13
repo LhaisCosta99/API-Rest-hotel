@@ -64,12 +64,12 @@ class DAO {
 
     static CriarRegistro(query, entidade){
         return new Promise((resolve, reject) => {
-            Database.run(query, entidade, (erro, resultado) => {
+            Database.run(query, entidade, (erro) => {
                 if(erro) {
                     reject(erro)
                 }
                 else {
-                    resolve(resultado)
+                    resolve({Sucesso: "Registro inserido om sucesso!"})
                 }
             })
         })

@@ -1,4 +1,5 @@
 import express from "express";
+import HospedesController from "./controllers/HospedesController.js";
 import HospedesDAO from "./DAO/HospedesDAO.js";
 
 const app = express()
@@ -16,3 +17,5 @@ try {
 } catch (erro) {
     console.log(erro.message)
 }
+
+HospedesController.rotas(app)

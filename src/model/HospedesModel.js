@@ -6,3 +6,5 @@ class HospedesModel{
         this.telefone = telefone
     }
 }
+
+export default HospedesModel
