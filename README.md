@@ -25,9 +25,7 @@ nodemon: "^2.0.19"
 ```
 ## :lock_with_ink_pen: Instalação da aplicação :lock_with_ink_pen:
 
-:small_blue_diamond: Abra o terminal e rode os comandos abaixo:
-
-Abra o terminal/Powershell e rode os comandos abaixo:<br>
+:small_blue_diamond: Abra o terminal e rode os comandos abaixo: <br>
 
 Clonando o repositório: Clonando o repositório:
 ```
