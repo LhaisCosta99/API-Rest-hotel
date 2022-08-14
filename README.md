@@ -43,3 +43,30 @@ npm instal
 ```
 npm start
 ```
+## :footprints: Rotas da aplicação :footprints:
+:small_blue_diamond: HOSPEDES <br>
+:dart: Post-hospedes <br>
+```{
+    "nome": "Lhais",
+    "cpf": "12345678950",
+    "email": "lhais@lhais.com",
+    "telefone": "02140028926"
+}
+```
+Resposta <br>
+```
+{
+	"Sucesso": "Registro inserido com sucesso!"
+}
+```
+:dart: Get-hospedes <br>
+```
+	{
+		"id": 4,
+		"nome": "Lhais",
+		"cpf": "12345678950",
+		"email": "lhais@lhais.com",
+		"telefone": "02140028926"
+	}
+```
+
