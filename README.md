@@ -3,8 +3,8 @@
 
 ## :heavy_check_mark:  Requisitos   :heavy_check_mark:
 
-:small_blue_diamond: :small_blue_diamond:Node
-:small_blue_diamond: :small_blue_diamond: NPM
+ :small_blue_diamond:Node <br>
+ :small_blue_diamond: NPM <br>
 
 
 ## :dart: Denpendencias de desnvolvimento API :dart:
@@ -44,6 +44,7 @@ npm instal
 npm start
 ```
 ## :footprints: Rotas da aplicação :footprints:
+:small_blue_diamond: Os teste da API foram feitos via Insomnia e Postman. <br>
 :small_blue_diamond: HOSPEDES <br>
 :dart: Post-hospedes <br>
 ```{
@@ -53,7 +54,7 @@ npm start
     "telefone": "02140028926"
 }
 ```
-Resposta <br>
+:speech_balloon: Resposta <br>
 ```
 {
 	"Sucesso": "Registro inserido com sucesso!"
@@ -69,4 +70,63 @@ Resposta <br>
 		"telefone": "02140028926"
 	}
 ```
+:dart: Patch-hospedes <br>
+```{
+		"id": 4,
+		"nome": "Lhais",
+		"cpf": "12345678950",
+		"email": "lhais@lhais.com",
+		"telefone": "02140028926"
+	}
+```
+:speech_balloon: Resposta <br>
+```
+{
+	"message": "Registro atualizado com sucesso",
+	"id": "5"
+}
+```
+:dart: Delete-hospedes <br>
+```
+http://localhost:3000/hospedes/10
+```
+:speech_balloon: Resposta <br>
+```
+{
+	"message": "Registro deletado com sucesso",
+	"id": "10"
+}
+```
 
+## :speech_balloon: Respostas caso algo esteje incompleto.
+```
+{
+	"message": "Nome inválido, deve ter no mínimo 3 caracteres"
+}
+```
+```
+{
+	"message": "CPF inválido, favor rever a requisição."
+}
+```
+```
+{
+	"message": "Email inválido, favor rever a requisição."
+}
+```
+```
+{
+	"message": "Telefone inválido, favor rever a requisição."
+}
+```
+## :people_hugging: Links externos :people_hugging:
+ https://developer.mozilla.org/pt-BR/docs/Learn/Server-side/Express_Nodejs/Introduction <br>
+https://developer.mozilla.org/pt-BR/docs/Glossary/CORS <br>
+https://nodejs.org/en/knowledge/getting-started/npm/what-is-npm/ <br>
+https://developer.mozilla.org/pt-BR/docs/Web/API/Web_Storage_API <br>
+https://mundodacomputacaointegral.blogspot.com/2021/04/conhecendo-o-insomnia.html <br>
+## :people_hugging: Colaboradoras :people_hugging:
+:pen: Carol <br>
+:pen: Ivy <br>
+:pen: Lhaís <br>
+:pen: Luana <br>
