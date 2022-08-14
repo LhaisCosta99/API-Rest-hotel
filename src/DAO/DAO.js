@@ -57,7 +57,7 @@ class DAO {
                     reject(erro)
                 }
                 else {
-                    resolve(resultado)
+                    resolve({message: "Registro deletado com sucesso", id})
                 }
             })
         })
