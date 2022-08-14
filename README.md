@@ -1,10 +1,17 @@
 # Projeto-final-M4
 ## :hotel: Sobre :hotel:
+Projeto final do modulo 4 da Resilia Educação, desnvolvemos uma API Rest de um hotel.<br>
+Projeto denvolvido em Node.js com framework Express.<br>
+Onde cada colaboradora ficou responsável por uma entidade e suas respectimas rotas, em cada entidade  o metódo CRUD foi realizado.
 
 ## :heavy_check_mark:  Requisitos   :heavy_check_mark:
 
  :small_blue_diamond:Node <br>
  :small_blue_diamond: NPM <br>
+ :small_blue_diamond: Git <br>
+:small_blue_diamond: VsCode ou qualquer editor de texto de preferência.<br>
+:small_blue_diamond:Insomnia Rest ou Postiman.
+
 
 
 ## :dart: Denpendencias de desnvolvimento API :dart:
@@ -125,6 +132,7 @@ https://developer.mozilla.org/pt-BR/docs/Glossary/CORS <br>
 https://nodejs.org/en/knowledge/getting-started/npm/what-is-npm/ <br>
 https://developer.mozilla.org/pt-BR/docs/Web/API/Web_Storage_API <br>
 https://mundodacomputacaointegral.blogspot.com/2021/04/conhecendo-o-insomnia.html <br>
+https://developer.mozilla.org/pt-BR/docs/Glossary/CRUD
 ## :people_hugging: Colaboradoras :people_hugging:
 :pen: Carol <br>
 :pen: Ivy <br>
