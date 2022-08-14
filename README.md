@@ -4,7 +4,7 @@
 ## :heavy_check_mark:  Requisitos   :heavy_check_mark:
 
 :small_blue_diamond: :small_blue_diamond:Node
-:small_blue_diamond: NPM
+:small_blue_diamond: :small_blue_diamond: NPM
 
 
 ## :dart: Denpendencias de desnvolvimento API :dart:
