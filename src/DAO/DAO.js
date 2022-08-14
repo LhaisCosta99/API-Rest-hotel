@@ -38,13 +38,14 @@ class DAO {
     }
 
     static atualizarRegistroPorId(query, entidade, id){
+        const arrEntidade = Object.values(entidade)
         return new Promise((resolve, reject) => {
-            Database.run(query, [...entidade, id] , (erro, resultado) => {
+            Database.run(query, [...arrEntidade, id] , (erro, resultado) => {
                 if(erro) {
                     reject(erro)
                 }
                 else {
-                    resolve(resultado)
+                    resolve({message: "Registro atualizado com sucesso", id})
                 }
             })
         })
@@ -69,7 +70,7 @@ class DAO {
                     reject(erro)
                 }
                 else {
-                    resolve({Sucesso: "Registro inserido om sucesso!"})
+                    resolve({Sucesso: "Registro inserido com sucesso!"})
                 }
             })
         })

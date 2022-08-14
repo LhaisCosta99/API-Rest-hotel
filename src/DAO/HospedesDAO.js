@@ -19,7 +19,7 @@ class HospedesDAO {
     
     static async criarHospede(body){
         const query = `
-        INSERT INTO hospedes (nome, cpf, email, telefone) values (?,?,?,?)
+        INSERT INTO hospedes (nome, cpf, email, telefone) VALUES (?,?,?,?)
         `
         const entidade = [body.nome, body.cpf, body.email, body.telefone]
 
@@ -34,6 +34,33 @@ class HospedesDAO {
         `
         const resposta = await DAO.buscarTodosOsRegistros(query)
 
+        return resposta
+    }
+
+    static async listarHospedesPorID(id){
+        const query = `
+         SELECT * FROM hospedes WHERE id = ?`
+        
+        const resposta = await DAO.buscarRegistroPorId(query,id)
+        
+        return resposta
+    }
+
+    static async deletarHospedesPorID(id){
+        const query = `
+        DELETE FROM hospedes WHERE id = ?`
+        
+        const resposta = await DAO.DeletarRegistroPorId(query, id)
+        
+        return resposta
+    }
+
+    static async atualizarHospedesPorID(id, hospede){
+        const query = `
+        UPDATE hospedes SET (nome, cpf, email, telefone) = (?,?,?,?) WHERE id = ?`
+        
+        const resposta = await DAO.atualizarRegistroPorId(query, hospede, id)
+        
         return resposta
     }
 }

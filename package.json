@@ -21,6 +21,7 @@
   "homepage": "https://github.com/LhaisCosta99/Projeto-final-M4#readme",
   "type": "module",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.18.1",
     "path": "^0.12.7",
     "sqlite3": "^5.0.11",
