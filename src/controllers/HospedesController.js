@@ -1,5 +1,6 @@
 import HospedesDAO from "../DAO/HospedesDAO.js"
 import HospedesModel from "../model/HospedesModel.js"
+import ValidacoesHospede from "../services/hospedesService.js"
 
 class HospedesController{
     static rotas(app){
@@ -26,12 +27,17 @@ class HospedesController{
         })
 
         app.post("/hospedes", async (req, res) => {
-            const hospede = new HospedesModel(req.body.nome, req.body.cpf, req.body.email, req.body.telefone)
             try {
+                ValidacoesHospede.validaHospede(req.body.nome, req.body.cpf, req.body.email, req.body.telefone)
+
+                const hospede = new HospedesModel(req.body.nome, req.body.cpf, req.body.email, req.body.telefone)
+
                 const inserir = await HospedesDAO.criarHospede(hospede)
+                
                 res.status(201).json(inserir)
+
             } catch (erro) {
-                res.status(400).json(erro.message)
+                res.status(400).json({message: erro.message})
             }
         })
     
@@ -49,6 +55,7 @@ class HospedesController{
 
                 delete hospede.id
 
+                ValidacoesHospede.validaHospede(hospede.nome, hospede.cpf, hospede.email, hospede.telefone)
                 const resposta = await HospedesDAO.atualizarHospedesPorID(id, hospede)
 
                 res.status(200).json(resposta)

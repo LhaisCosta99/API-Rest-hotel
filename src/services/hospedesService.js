@@ -31,11 +31,14 @@ class ValidacoesHospede{
         return true
     }
     static validaHospede(nome, cpf, email, telefone){
-        const valida = this.validaCPF(cpf) &&
+        const valida = 
         this.validaNome(nome) &&
+        this.validaCPF(cpf) &&
         this.validaEmail(email) && 
         this.validaTelefone(telefone)
 
         return valida
     }
 }
+
+export default ValidacoesHospede
