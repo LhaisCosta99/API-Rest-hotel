@@ -3,11 +3,11 @@ import DAO from "./DAO.js";
 class QuartosDAO {
     static async criaTabelaQuartos(){
         const query = `
-        CREATE TABLE IF NOT EXISTS Quartos (
+        CREATE TABLE IF NOT EXISTS quartos (
                 id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
                 numero INT,
                 tipo VARCHAR,
-                status VARCHAR,
+                status VARCHAR
             )
         `
 
@@ -73,7 +73,7 @@ class QuartosDAO {
     }
 }
 
-export default QuartosDAO
+export default QuartosDAO;
 
 
 
