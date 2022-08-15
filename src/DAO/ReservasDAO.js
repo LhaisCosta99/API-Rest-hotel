@@ -5,11 +5,11 @@ class ReservasDAO {
         const query = `
         CREATE TABLE IF NOT EXISTS Reservas (
                 id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-                idCliente INT
-                idQuarto INT
+                idCliente INT,
+                idQuarto INT,
                 qtdDias INT,
                 checkIn DATETIME,
-                checkOut DATETIME,
+                checkOut DATETIME
             )
         `
 

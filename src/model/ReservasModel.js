@@ -1,5 +1,5 @@
 class ReservasModel{
-    constructor(idCliente, qtdDias, checkIn, checkOut, idQuarto){
+    constructor(idCliente, idQuarto, qtdDias, checkIn, checkOut){
         this.idCliente = idCliente
         this.qtdDias = qtdDias
         this.checkIn = checkIn
