@@ -50,14 +50,21 @@ npm install
 ```
 npm start
 ```
+## :footprints: Link heroku :footprints:
+
+https://transilvania-hotel.herokuapp.com/ <br>
+
 ## :footprints: Rotas da aplicação :footprints:
 :small_blue_diamond: Os teste da API foram feitos via Insomnia e Postman. <br>
+
 :small_blue_diamond: HOSPEDES <br>
+
 :dart: Post-hospedes <br>
-```
-/hospedes
-```
 ```js
+//Cria registros.
+
+/hospedes/
+
 {
     "nome": "Lhais",
     "cpf": "12345678950",
@@ -73,24 +80,31 @@ npm start
 ```
 :dart: Get-hospedes <br>
 ```js
-//
+//Bursca o ":id" O get que busca todos os registros na sua entidade.
+
+/hospedes/:id
+
 {
 		"id": 4,
 		"nome": "Lhais",
 		"cpf": "12345678950",
 		"email": "lhais@lhais.com",
 		"telefone": "02140028926"
-	}
+}
 ```
 :dart: Patch-hospedes <br>
 ```js
+
+//Atualiza ":id" Modifica registos através do id .  
+
+/hospedes/:id
 {
 		"id": 4,
 		"nome": "Lhais",
 		"cpf": "12345678950",
 		"email": "lhais@lhais.com",
 		"telefone": "02140028926"
-	}
+}
 ```
 :speech_balloon: Resposta <br>
 ```js
@@ -101,7 +115,7 @@ npm start
 ```
 :dart: Delete-hospedes <br>
 ```js
-//Troque ":id" pelo id que você quer delertar.
+//Troque ":id" pelo id que você quer deletar. <br>
 /hospedes/:id
 ```
 :speech_balloon: Resposta <br>
@@ -112,7 +126,7 @@ npm start
 }
 ```
 
-## :speech_balloon: Respostas caso algo esteje incompleto.
+## :speech_balloon: Respostas em cada de erro. :speech_balloon:
 ```
 {
 	"message": "Nome inválido, deve ter no mínimo 3 caracteres"
@@ -133,6 +147,18 @@ npm start
 	"message": "Telefone inválido, favor rever a requisição."
 }
 ```
+:small_blue_diamond: RESERVAS <br>
+:dart: Post-reservas <br>
+:dart: Get-reservas <br>
+:dart: Patch-reservas <br>
+:dart: Delete-reservas<br>
+
+:small_blue_diamond: QUARTOS <br>
+:dart: Post-quartos <br>
+:dart: Get-quartos <br>
+:dart: Patch-quartos <br>
+:dart: Delete-quartos <br>
+
 ## :people_hugging: Links externos :people_hugging:
  https://developer.mozilla.org/pt-BR/docs/Learn/Server-side/Express_Nodejs/Introduction <br>
 https://developer.mozilla.org/pt-BR/docs/Glossary/CORS <br>
@@ -140,6 +166,8 @@ https://nodejs.org/en/knowledge/getting-started/npm/what-is-npm/ <br>
 https://developer.mozilla.org/pt-BR/docs/Web/API/Web_Storage_API <br>
 https://mundodacomputacaointegral.blogspot.com/2021/04/conhecendo-o-insomnia.html <br>
 https://developer.mozilla.org/pt-BR/docs/Glossary/CRUD
+
+
 ## :people_hugging: Colaboradoras :people_hugging:
 :pen: Carol <br>
 :pen: Ivy <br>
