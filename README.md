@@ -50,14 +50,17 @@ npm install
 ```
 npm start
 ```
+## :footprints: Link heroku :footprints:
+
+https://transilvania-hotel.herokuapp.com/ <br>
+
 ## :footprints: Rotas da aplicação :footprints:
 :small_blue_diamond: Os teste da API foram feitos via Insomnia e Postman. <br>
 :small_blue_diamond: HOSPEDES <br>
 :dart: Post-hospedes <br>
-```
-/hospedes
-```
 ```js
+//Cria : Cria registos. <br>
+/hospedes
 {
     "nome": "Lhais",
     "cpf": "12345678950",
@@ -73,7 +76,8 @@ npm start
 ```
 :dart: Get-hospedes <br>
 ```js
-//
+//Bursca o ":id" Trás todos  os dados através do id, se id não for selecionado, a resposta é um array com  varios registros . <br>
+/hospedes/:id
 {
 		"id": 4,
 		"nome": "Lhais",
@@ -84,6 +88,8 @@ npm start
 ```
 :dart: Patch-hospedes <br>
 ```js
+//Atualiza ":id" pelo id motifique  o que for desejado, que será atualizado. <br>
+/hospedes/:id
 {
 		"id": 4,
 		"nome": "Lhais",
@@ -101,7 +107,7 @@ npm start
 ```
 :dart: Delete-hospedes <br>
 ```js
-//Troque ":id" pelo id que você quer delertar.
+//Troque ":id" pelo id que você quer delertar. <br>
 /hospedes/:id
 ```
 :speech_balloon: Resposta <br>
@@ -112,7 +118,7 @@ npm start
 }
 ```
 
-## :speech_balloon: Respostas caso algo esteje incompleto.
+## :speech_balloon: Respostas caso algo erro.
 ```
 {
 	"message": "Nome inválido, deve ter no mínimo 3 caracteres"
@@ -133,6 +139,18 @@ npm start
 	"message": "Telefone inválido, favor rever a requisição."
 }
 ```
+:small_blue_diamond: RESERVAS <br>
+:dart: Post-reservas <br>
+:dart: Get-reservas <br>
+:dart: Patch-reservas <br>
+:dart: Delete-reservas<br>
+
+:small_blue_diamond: Quatos <br>
+:dart: Post-quartos <br>
+:dart: Get-quartos <br>
+:dart: Patch-quartos <br>
+:dart: Delete-quartos <br>
+
 ## :people_hugging: Links externos :people_hugging:
  https://developer.mozilla.org/pt-BR/docs/Learn/Server-side/Express_Nodejs/Introduction <br>
 https://developer.mozilla.org/pt-BR/docs/Glossary/CORS <br>
