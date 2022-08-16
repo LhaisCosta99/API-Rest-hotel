@@ -56,12 +56,14 @@ https://transilvania-hotel.herokuapp.com/ <br>
 
 ## :footprints: Rotas da aplicação :footprints:
 :small_blue_diamond: Os teste da API foram feitos via Insomnia e Postman. <br>
+
 :small_blue_diamond: HOSPEDES <br>
+
 :dart: Post-hospedes <br>
 ```js
-//Cria : Cria registos. 
+//Cria registros.
 
-/hospedes
+/hospedes/
 
 {
     "nome": "Lhais",
@@ -78,7 +80,7 @@ https://transilvania-hotel.herokuapp.com/ <br>
 ```
 :dart: Get-hospedes <br>
 ```js
-//Bursca o ":id" Tráz  todos  os dados através do id, se id não for selecionado, a resposta é um array com  varios registros . 
+//Bursca o ":id" O get que busca todos os registros na sua entidade.
 
 /hospedes/:id
 
@@ -88,12 +90,12 @@ https://transilvania-hotel.herokuapp.com/ <br>
 		"cpf": "12345678950",
 		"email": "lhais@lhais.com",
 		"telefone": "02140028926"
-	}
+}
 ```
 :dart: Patch-hospedes <br>
 ```js
 
-//Atualiza ":id" pelo id motifique  o que for desejado, que será atualizado. 
+//Atualiza ":id" Modifica registos através do id .  
 
 /hospedes/:id
 {
@@ -102,7 +104,7 @@ https://transilvania-hotel.herokuapp.com/ <br>
 		"cpf": "12345678950",
 		"email": "lhais@lhais.com",
 		"telefone": "02140028926"
-	}
+}
 ```
 :speech_balloon: Resposta <br>
 ```js
@@ -113,7 +115,7 @@ https://transilvania-hotel.herokuapp.com/ <br>
 ```
 :dart: Delete-hospedes <br>
 ```js
-//Troque ":id" pelo id que você quer delertar. <br>
+//Troque ":id" pelo id que você quer deletar. <br>
 /hospedes/:id
 ```
 :speech_balloon: Resposta <br>
@@ -124,7 +126,7 @@ https://transilvania-hotel.herokuapp.com/ <br>
 }
 ```
 
-## :speech_balloon: Respostas caso algo erro.
+## :speech_balloon: Respostas em cada de erro. :speech_balloon:
 ```
 {
 	"message": "Nome inválido, deve ter no mínimo 3 caracteres"
@@ -151,7 +153,7 @@ https://transilvania-hotel.herokuapp.com/ <br>
 :dart: Patch-reservas <br>
 :dart: Delete-reservas<br>
 
-:small_blue_diamond: Quatos <br>
+:small_blue_diamond: QUARTOS <br>
 :dart: Post-quartos <br>
 :dart: Get-quartos <br>
 :dart: Patch-quartos <br>
@@ -164,6 +166,8 @@ https://nodejs.org/en/knowledge/getting-started/npm/what-is-npm/ <br>
 https://developer.mozilla.org/pt-BR/docs/Web/API/Web_Storage_API <br>
 https://mundodacomputacaointegral.blogspot.com/2021/04/conhecendo-o-insomnia.html <br>
 https://developer.mozilla.org/pt-BR/docs/Glossary/CRUD
+
+
 ## :people_hugging: Colaboradoras :people_hugging:
 :pen: Carol <br>
 :pen: Ivy <br>
