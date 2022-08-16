@@ -1,20 +1,21 @@
-import hospedeDAO from "../DAO/HospedesDAO"
+import HospedesDAO from "../DAO/HospedesDAO.js"
+
 class ValidacoesReserva {
 
     static ValidaHospede(id) {
-        if (id == 0 || id == null)
-            throw "ID do Cliente está inválido, reveja a requisição"
+        if (id == 0 || id == undefined || id == null)
+            throw new Error("ID do Cliente está inválido, reveja a requisição")
 
-        let cliente = hospedeDAO.listarHospedesPorID(id);
+        let cliente = HospedesDAO.listarHospedesPorID(id);
         if (cliente == null)
-            throw "Hospede não encontrado, reveja a requisição ou cadastre o novo hospede"
+            throw new Error("Hospede não encontrado, reveja a requisição ou cadastre o novo hospede")
 
         return true;
     }
 
     static ValidaQuarto(idQuarto) {
-        if (idQuarto == 0 || idQuarto == null)
-            throw "ID do Quarto está inválido, reveja a requisição"
+        if (idQuarto == 0 || idQuarto == null || idQuarto == undefined)
+            throw new Error("ID do Quarto está inválido, reveja a requisição")
 
         // let Quarto = quartoDAO.listarQuartoPorID(id);
         // if (Quarto == null)
@@ -27,7 +28,7 @@ class ValidacoesReserva {
 
     static ValidaCampoDias(qtdDias) {
         if (qtdDias == 0 || qtdDias == null)
-            throw "Quantidade de dias está inválida, reveja a requisição"
+            throw new Error("Quantidade de dias está inválida, reveja a requisição")
 
         return true;
     }
@@ -37,13 +38,25 @@ class ValidacoesReserva {
         let dataFim = Date.parse(checkOut);
 
         if (dataIni < Date.now)
-            throw "Data de Check-In não pode ser menor que a data atual"
+            throw new Error("Data de Check-In não pode ser menor que a data atual")
         if (dataFim < Date.now)
-            throw "Data de Check-out não pode ser menor que a data atual"
+            throw new Error("Data de Check-out não pode ser menor que a data atual")
         if (dataFim < dataIni)
-            throw "Data de Check-out não pode ser menor que a data de Check-in"
-        
-            return true;
+            throw new Error("Data de Check-out não pode ser menor que a data de Check-in")
+
+        return true;
+    }
+
+    static ValidaReservas(idCliente, idQuarto, qtdDias, checkIn, checkOut) {
+        const valida =
+            this.ValidaHospede(idCliente) &&
+            this.ValidaQuarto(idQuarto) &&
+            this.ValidaCampoDias(qtdDias) &&
+            this.ValidaCamposData(checkIn, checkOut)
+
+        return valida
     }
 
 }
+
+export default ValidacoesReserva
