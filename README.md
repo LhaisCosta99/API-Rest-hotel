@@ -59,8 +59,10 @@ https://transilvania-hotel.herokuapp.com/ <br>
 :small_blue_diamond: HOSPEDES <br>
 :dart: Post-hospedes <br>
 ```js
-//Cria : Cria registos. <br>
+//Cria : Cria registos. 
+
 /hospedes
+
 {
     "nome": "Lhais",
     "cpf": "12345678950",
@@ -76,8 +78,10 @@ https://transilvania-hotel.herokuapp.com/ <br>
 ```
 :dart: Get-hospedes <br>
 ```js
-//Bursca o ":id" Trás todos  os dados através do id, se id não for selecionado, a resposta é um array com  varios registros . <br>
+//Bursca o ":id" Tráz  todos  os dados através do id, se id não for selecionado, a resposta é um array com  varios registros . 
+
 /hospedes/:id
+
 {
 		"id": 4,
 		"nome": "Lhais",
@@ -88,7 +92,9 @@ https://transilvania-hotel.herokuapp.com/ <br>
 ```
 :dart: Patch-hospedes <br>
 ```js
-//Atualiza ":id" pelo id motifique  o que for desejado, que será atualizado. <br>
+
+//Atualiza ":id" pelo id motifique  o que for desejado, que será atualizado. 
+
 /hospedes/:id
 {
 		"id": 4,
