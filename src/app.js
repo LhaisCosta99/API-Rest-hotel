@@ -8,12 +8,39 @@ import cors from "cors"
 
 const app = express()
 const port = process.env.PORT || 3000
+const environment = process.env.ENVIRONMENT || "DEV"
 
 app.use(express.json())
-app.use(cors())
+app.use(cors("https://transilvania-hotel.herokuapp.com"))
 
 app.listen(port, () => {
+    if(environment === "PROD")  {
+        console.log()
+    }
     console.log(`http://localhost:${port}`)
+})
+
+app.get("/", (req, res)=>{
+    if(environment === "PROD"){
+        res.send(`
+        <h1> Bem vindo ao Hotel Transilvania API </h1>
+        <h2> Para acessar as rotas das entidades utilize os endereços a seguir: </h2>
+        <a> <h3>Hospedes:</h3> https://transilvania-hotel.herokuapp.com/hospedes </a>
+        <br>
+        <a> <h3>Reservas:</h3> https://transilvania-hotel.herokuapp.com/reservas </a>
+        <br>
+        <a> <h3>Quartos:</h3> https://transilvania-hotel.herokuapp.com/quartos </a>
+        `)
+    }
+    res.send(`
+    <h1> Bem vindo ao Hotel Transilvania API </h1>
+    <h2> Para acessar as rotas das entidades utilize os endereços a seguir: </h2>
+    <a> <h3>Hospedes:</h3> http://localhost:${port}/hospedes </a>
+    <br>
+    <a> <h3>Reservas:</h3> http://localhost:${port}/reservas </a>
+    <br>
+    <a> <h3>Quartos:</h3> http://localhost:${port}/quartos </a>
+    `)
 })
 
 HospedesController.rotas(app)

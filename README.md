@@ -10,7 +10,7 @@ Onde cada colaboradora ficou responsável por uma entidade e suas respectimas ro
  :small_blue_diamond: NPM <br>
  :small_blue_diamond: Git <br>
 :small_blue_diamond: VsCode ou qualquer editor de texto de preferência.<br>
-:small_blue_diamond:Insomnia Rest ou Postiman.
+:small_blue_diamond:Insomnia Rest ou Postman.
 
 
 
@@ -44,7 +44,7 @@ cd Projeto-final-M4
 ```
 :small_blue_diamond: Para intalar pacotes:
 ```
-npm instal 
+npm install
 ```
 :small_blue_diamond: Para rodar a aplicação:
 ```
@@ -54,7 +54,11 @@ npm start
 :small_blue_diamond: Os teste da API foram feitos via Insomnia e Postman. <br>
 :small_blue_diamond: HOSPEDES <br>
 :dart: Post-hospedes <br>
-```{
+```
+/hospedes
+```
+```js
+{
     "nome": "Lhais",
     "cpf": "12345678950",
     "email": "lhais@lhais.com",
@@ -62,14 +66,15 @@ npm start
 }
 ```
 :speech_balloon: Resposta <br>
-```
+```js
 {
 	"Sucesso": "Registro inserido com sucesso!"
 }
 ```
 :dart: Get-hospedes <br>
-```
-	{
+```js
+//
+{
 		"id": 4,
 		"nome": "Lhais",
 		"cpf": "12345678950",
@@ -78,7 +83,8 @@ npm start
 	}
 ```
 :dart: Patch-hospedes <br>
-```{
+```js
+{
 		"id": 4,
 		"nome": "Lhais",
 		"cpf": "12345678950",
@@ -87,18 +93,19 @@ npm start
 	}
 ```
 :speech_balloon: Resposta <br>
-```
+```js
 {
 	"message": "Registro atualizado com sucesso",
 	"id": "5"
 }
 ```
 :dart: Delete-hospedes <br>
-```
-http://localhost:3000/hospedes/10
+```js
+//Troque ":id" pelo id que você quer delertar.
+/hospedes/:id
 ```
 :speech_balloon: Resposta <br>
-```
+```js
 {
 	"message": "Registro deletado com sucesso",
 	"id": "10"
