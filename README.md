@@ -159,7 +159,7 @@ https://transilvania-hotel.herokuapp.com/ <br>
     "idQuarto": 1,
     "qtdDias": 2,
     "checkIn": 2022-05-06,
-    "checkOut" : 2022-05-07
+    "checkOut": 2022-05-07
 }
 ```
 :speech_balloon: Resposta <br>
@@ -227,13 +227,85 @@ https://transilvania-hotel.herokuapp.com/ <br>
 	"message": "Reserva não encontrada"
 }
 ```
-```
-
 :small_blue_diamond: QUARTOS <br>
 :dart: Post-quartos <br>
+```js
+//Cria registros.
+
+/quartos/
+
+{
+   "numero": 96, 
+   "tipo": “presidencial”, 
+   "status": “livre” 
+}
+```
+:speech_balloon: Resposta <br>
+```js
+{
+	"Sucesso": "Registro inserido com sucesso!"
+}
+```
 :dart: Get-quartos <br>
+```js
+//Busca o “:numero” do quarto. O get que busca todos os registros na sua entidade.
+
+/quartos/:numero
+
+{
+		"id": 8,
+		"numero": 96,
+		"tipo": "presidencial",
+		"status": "livre"
+}
+```
 :dart: Patch-quartos <br>
+```js
+
+//Atualiza ":numero". Modifica registros através do número.  
+
+/quartos/:numero
+{
+		"numero": 96,
+		"tipo": "presidencial",
+		"status": "ocupado" 
+}
+```
+:speech_balloon: Resposta <br>
+```js
+{
+	"message": "Registro atualizado com sucesso",
+        "numero": “96”
+}
+```
 :dart: Delete-quartos <br>
+```js
+//Troque ":id" pelo id que você quer deletar. 
+/quartos/:id
+```
+:speech_balloon: Resposta <br>
+```js
+{
+	"message": "Registro deletado com sucesso",
+	"id": "8"
+}
+```
+## :speech_balloon: Respostas em cada erro. :speech_balloon:
+```
+{
+	"message": "Digite um número de quarto válido"
+}
+```
+```
+{
+	"message": "Número de quarto inexistente"
+}
+```
+```
+{
+	"message": "Número de quarto inválido"
+}
+```
 
 ## :people_hugging: Links externos :people_hugging:
  https://developer.mozilla.org/pt-BR/docs/Learn/Server-side/Express_Nodejs/Introduction <br>
