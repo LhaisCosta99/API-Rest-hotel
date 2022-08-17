@@ -175,11 +175,11 @@ https://transilvania-hotel.herokuapp.com/ <br>
 /reservas/:id
 
 {
-		"idCliente": 1,
-		"idQuarto": 1,
-		"qtdDias": 2,
-		"checkIn": 2022-05-06,
-		"checkOut" : 2022-05-07
+	"idCliente": 1,
+	"idQuarto": 1,
+	"qtdDias": 2,
+	"checkIn": 2022-05-06,
+	"checkOut" : 2022-05-07
 }
 ```
 :dart: Patch-reservas <br>
@@ -189,11 +189,11 @@ https://transilvania-hotel.herokuapp.com/ <br>
 
 /reservas/:id
 {
-		"idCliente": 1,
-		"idQuarto": 1,
-		"qtdDias": 2,
-		"checkIn": 2022-05-06,
-		"checkOut" : 2022-05-07
+	"idCliente": 1,
+	"idQuarto": 1,
+	"qtdDias": 2,
+	"checkIn": 2022-05-06,
+	"checkOut" : 2022-05-07
 }
 ```
 :speech_balloon: Resposta <br>
@@ -234,6 +234,7 @@ https://transilvania-hotel.herokuapp.com/ <br>
 
 /quartos/
 
+```js
 {
    "numero": 96, 
    "tipo": “presidencial”, 
@@ -253,10 +254,10 @@ https://transilvania-hotel.herokuapp.com/ <br>
 /quartos/:numero
 
 {
-		"id": 8,
-		"numero": 96,
-		"tipo": "presidencial",
-		"status": "livre"
+	"id": 8,
+	"numero": 96,
+	"tipo": "presidencial",
+	"status": "livre"
 }
 ```
 :dart: Patch-quartos <br>
