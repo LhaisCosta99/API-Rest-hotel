@@ -1,11 +1,11 @@
 import ReservasDAO from "../DAO/ReservasDAO.js"
 import ReservasModel from "../model/ReservasModel.js"
-// import ValidacoesReserva from "../services/ReservasService.js"
+import ValidacoesReserva from "../services/reservasService.js"
 
-class ReservasController{
-    static rotas(app){
-        app.get("/Reservas", async(req, res)=>{
-            try {                
+class ReservasController {
+    static rotas(app) {
+        app.get("/Reservas", async (req, res) => {
+            try {
                 const Reservas = await ReservasDAO.listarTodosOsReservas()
                 res.status(200).json(Reservas)
             } catch (erro) {
@@ -17,37 +17,39 @@ class ReservasController{
             try {
                 const Reserva = await ReservasDAO.listarReservasPorID(req.params.id)
 
-                if(!Reserva.id){
+                if (!Reserva.id) {
                     throw new Error("Reserva não encontrado para esse id")
                 }
                 res.status(200).json(Reserva)
             } catch (erro) {
-                res.status(404).json({message: erro.message, id: req.params.id})
+                res.status(404).json({ message: erro.message, id: req.params.id })
             }
         })
 
         app.post("/Reservas", async (req, res) => {
             try {
-                //ValidacoesReserva.validaReserva(req.body.idCliente, req.body.idQuarto, req.body.qtdDias, req.body.checkIn, req.body.checkOut)
+                ValidacoesReserva.ValidaReservas(req.body.idCliente, req.body.idQuarto, req.body.qtdDias, req.body.checkIn, req.body.checkOut)
+                // ValidacoesReserva.ValidaHospede(req.body.idCliente)
 
                 const Reserva = new ReservasModel(req.body.idCliente, req.body.idQuarto, req.body.qtdDias, req.body.checkIn, req.body.checkOut)
 
                 const inserir = await ReservasDAO.criarReserva(Reserva)
-                
+
                 res.status(201).json(inserir)
 
             } catch (erro) {
-                res.status(400).json({message: erro.message})
+                res.status(400).json({ message: erro.message })
             }
         })
-    
-        app.patch("/Reservas/:id", async (req, res)=>{
+
+        app.patch("/Reservas/:id", async (req, res) => {
             const id = req.params.id
             const body = Object.entries(req.body)
-            try {                
+            try {
+
                 const Reserva = await ReservasDAO.listarReservasPorID(id)
 
-                if(!Reserva.id){
+                if (!Reserva.id) {
                     throw new Error("Reserva não encontrado para esse id")
                 }
 
@@ -55,24 +57,24 @@ class ReservasController{
 
                 delete Reserva.id
 
-                //ValidacoesReserva.validaReserva(Reserva.nome, Reserva.cpf, Reserva.email, Reserva.telefone)
+                ValidacoesReserva.ValidaReservas(req.body.idCliente, req.body.idQuarto, req.body.qtdDias, req.body.checkIn, req.body.checkOut)
                 const resposta = await ReservasDAO.atualizarReservasPorID(id, Reserva)
 
                 res.status(200).json(resposta)
 
             } catch (erro) {
-                res.status(400).json({message: erro.message, id})
+                res.status(400).json({ message: erro.message, id })
             }
-            
+
         })
 
         app.delete("/Reservas/:id", async (req, res) => {
             const id = req.params.id
-            try {     
-                
+            try {
+
                 const Reserva = await ReservasDAO.listarReservasPorID(id)
 
-                if(!Reserva.id){
+                if (!Reserva.id) {
                     throw new Erro("Reserva não encontrado")
                 }
 
@@ -80,8 +82,8 @@ class ReservasController{
 
                 res.status(200).json(resposta)
 
-            } catch (erro) {    
-                res.status(404).json({Erro: erro.message, id})
+            } catch (erro) {
+                res.status(404).json({ Erro: erro.message, id })
             }
         })
     }
