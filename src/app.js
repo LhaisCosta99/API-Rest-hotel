@@ -61,3 +61,5 @@ try {
 } catch (erro) {
     console.log(erro.message)
 }
+ReservasController.rotas(app)
+
