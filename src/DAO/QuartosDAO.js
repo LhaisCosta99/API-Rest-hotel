@@ -40,12 +40,12 @@ class QuartosDAO {
         const query = `
          SELECT * FROM Quartos WHERE numero = ?`
         
-        const resposta = await DAO.buscarRegistroPorId(query,numero)
+        const resposta = await DAO.buscarQuartosPorNumero(query,numero)
         
         return resposta
     }
 
-    static async listarQuartosPorId(id){
+    static async listarQuartoPorId(id){
         const query = `
          SELECT * FROM Quartos WHERE id = ?`
         
@@ -58,10 +58,20 @@ class QuartosDAO {
         const query = `
         DELETE FROM Quartos WHERE id = ?`
         
-        const resposta = await DAO.DeletarRegistroPorId(query, id)
+        const resposta = await DAO.deletarQuartosPorId(query, id)
         
         return resposta
     }
+
+    static async deletarQuartosPorNumero(numero){
+        const query = `
+        DELETE FROM Quartos WHERE numero = ?`
+        
+        const resposta = await DAO.deletarQuartosPorNumero(query, numero)
+        
+        return resposta
+    }
+
 
     static async atualizarQuartosPorID(id, quarto){
         const query = `
@@ -71,11 +81,15 @@ class QuartosDAO {
         
         return resposta
     }
+
+    static async atualizarQuartosPorNumero(numero, quarto){
+        const query = `
+        UPDATE Quartos SET (numero, tipo, status) = (?,?,?) WHERE numero = ?`
+        
+        const resposta = await DAO.atualizarQuartosPorNumero(query, quarto,numero)
+        
+        return resposta
+    }
 }
 
 export default QuartosDAO;
-
-
-
-
-
