@@ -149,9 +149,85 @@ https://transilvania-hotel.herokuapp.com/ <br>
 ```
 :small_blue_diamond: RESERVAS <br>
 :dart: Post-reservas <br>
+```js
+//Cria registros.
+
+/reservas/
+
+{
+    "idCliente": 1,
+    "idQuarto": 1,
+    "qtdDias": 2,
+    "checkIn": 2022-05-06,
+	"checkOut" : 2022-05-07
+}
+```
+:speech_balloon: Resposta <br>
+```js
+{
+	"Sucesso": "Reserva inserida com sucesso!"
+}
+```
 :dart: Get-reservas <br>
+```js
+//Busca o ":id" O get que busca todos os registros na sua entidade.
+
+/reservas/:id
+
+{
+		"idCliente": 1,
+		"idQuarto": 1,
+		"qtdDias": 2,
+		"checkIn": 2022-05-06,
+		"checkOut" : 2022-05-07
+}
+```
 :dart: Patch-reservas <br>
-:dart: Delete-reservas<br>
+```js
+
+//Atualiza ":id" Modifica registos através do id .  
+
+/reservas/:id
+{
+		"idCliente": 1,
+		"idQuarto": 1,
+		"qtdDias": 2,
+		"checkIn": 2022-05-06,
+		"checkOut" : 2022-05-07
+}
+```
+:speech_balloon: Resposta <br>
+```js
+{
+	"message": "Reserva atualizada com sucesso",
+	"id": "2"
+}
+```
+:dart: Delete-reservas <br>
+```js
+//Troque ":id" pelo id que você quer deletar. 
+/reservas/:id
+```
+:speech_balloon: Resposta <br>
+```js
+{
+	"message": "Reserva deletado com sucesso",
+	"id": "2"
+}
+```
+
+## :speech_balloon: Respostas em cada de erro. :speech_balloon:
+```
+{
+	"message": "Reserva não encontrado para esse id"
+}
+```
+```
+{
+	"message": "Reserva não encontrado"
+}
+```
+```
 
 :small_blue_diamond: QUARTOS <br>
 :dart: Post-quartos <br>
