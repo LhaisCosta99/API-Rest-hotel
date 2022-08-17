@@ -1,20 +1,20 @@
 # Projeto-final-M4
-## :hotel: Hotel Tansilvania API :hotel:
-Projeto final do modulo 4 da Resilia Educação, desnvolvemos uma API Rest de um hotel.<br>
-Projeto denvolvido em Node.js com framework Express.<br>
-Onde cada colaboradora ficou responsável por uma entidade e suas respectimas rotas, em cada entidade  o metódo CRUD foi realizado.
+## :hotel: Hotel Transilvânia API :hotel:
+Projeto final do módulo 4 da Resilia Educação, desenvolvemos uma API Rest de um hotel. <br>
+Projeto desenvolvido em Node.js com framework Express. <br>
+Onde cada colaboradora ficou responsável por uma entidade e suas respectivas rotas, em cada entidade o método CRUD foi realizado.
 
-## :heavy_check_mark:  Requisitos   :heavy_check_mark:
+## :heavy_check_mark:  Requisitos  :heavy_check_mark:
 
- :small_blue_diamond:Node <br>
- :small_blue_diamond: NPM <br>
- :small_blue_diamond: Git <br>
-:small_blue_diamond: VsCode ou qualquer editor de texto de preferência.<br>
-:small_blue_diamond:Insomnia Rest ou Postman.
+:small_blue_diamond: Node <br>
+:small_blue_diamond: NPM <br>
+:small_blue_diamond: Git <br>
+:small_blue_diamond: VsCode ou qualquer editor de texto de preferência. <br>
+:small_blue_diamond: Insomnia Rest ou Postman.
 
 
 
-## :dart: Denpendencias de desnvolvimento API :dart:
+## :dart: Dependências de desenvolvimento API :dart:
 ```
 cors: "^2.8.5"
 ```
@@ -34,7 +34,7 @@ nodemon: "^2.0.19"
 
 :small_blue_diamond: Abra o terminal e rode os comandos abaixo: <br>
 
-Clonando o repositório: Clonando o repositório:
+:small_blue_diamond: Clonando o repositório:
 ```
 git clone https://github.com/LhaisCosta99/Projeto-final-M4
 ```
@@ -42,7 +42,7 @@ git clone https://github.com/LhaisCosta99/Projeto-final-M4
 ```
 cd Projeto-final-M4
 ```
-:small_blue_diamond: Para intalar pacotes:
+:small_blue_diamond: Para instalar pacotes:
 ```
 npm install
 ```
@@ -50,12 +50,12 @@ npm install
 ```
 npm start
 ```
-## :footprints: Link heroku :footprints:
+## :footprints: Link Heroku :footprints:
 
 https://transilvania-hotel.herokuapp.com/ <br>
 
 ## :footprints: Rotas da aplicação :footprints:
-:small_blue_diamond: Os teste da API foram feitos via Insomnia e Postman. <br>
+:small_blue_diamond: Os testes da API foram feitos via Insomnia e Postman. <br>
 
 :small_blue_diamond: HOSPEDES <br>
 
@@ -80,7 +80,7 @@ https://transilvania-hotel.herokuapp.com/ <br>
 ```
 :dart: Get-hospedes <br>
 ```js
-//Bursca o ":id" O get que busca todos os registros na sua entidade.
+//Busca o ":id". O get que busca todos os registros na sua entidade.
 
 /hospedes/:id
 
@@ -95,7 +95,7 @@ https://transilvania-hotel.herokuapp.com/ <br>
 :dart: Patch-hospedes <br>
 ```js
 
-//Atualiza ":id" Modifica registos através do id .  
+//Atualiza ":id". Modifica registros através do id .  
 
 /hospedes/:id
 {
@@ -126,7 +126,7 @@ https://transilvania-hotel.herokuapp.com/ <br>
 }
 ```
 
-## :speech_balloon: Respostas em cada de erro. :speech_balloon:
+## :speech_balloon: Respostas em cada erro. :speech_balloon:
 ```
 {
 	"message": "Nome inválido, deve ter no mínimo 3 caracteres"
@@ -159,7 +159,7 @@ https://transilvania-hotel.herokuapp.com/ <br>
     "idQuarto": 1,
     "qtdDias": 2,
     "checkIn": 2022-05-06,
-	"checkOut" : 2022-05-07
+    "checkOut" : 2022-05-07
 }
 ```
 :speech_balloon: Resposta <br>
@@ -170,7 +170,7 @@ https://transilvania-hotel.herokuapp.com/ <br>
 ```
 :dart: Get-reservas <br>
 ```js
-//Busca o ":id" O get que busca todos os registros na sua entidade.
+//Busca o ":id". O get que busca todos os registros na sua entidade.
 
 /reservas/:id
 
@@ -185,7 +185,7 @@ https://transilvania-hotel.herokuapp.com/ <br>
 :dart: Patch-reservas <br>
 ```js
 
-//Atualiza ":id" Modifica registos através do id .  
+//Atualiza ":id". Modifica registros através do id .  
 
 /reservas/:id
 {
@@ -211,20 +211,20 @@ https://transilvania-hotel.herokuapp.com/ <br>
 :speech_balloon: Resposta <br>
 ```js
 {
-	"message": "Reserva deletado com sucesso",
+	"message": "Reserva deletada com sucesso",
 	"id": "2"
 }
 ```
 
-## :speech_balloon: Respostas em cada de erro. :speech_balloon:
+## :speech_balloon: Respostas em cada erro. :speech_balloon:
 ```
 {
-	"message": "Reserva não encontrado para esse id"
+	"message": "Reserva não encontrada para esse id"
 }
 ```
 ```
 {
-	"message": "Reserva não encontrado"
+	"message": "Reserva não encontrada"
 }
 ```
 ```
