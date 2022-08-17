@@ -1,5 +1,5 @@
 # Projeto-final-M4
-## :hotel: Sobre :hotel:
+## :hotel: Hotel Tansilvania API :hotel:
 Projeto final do modulo 4 da Resilia Educação, desnvolvemos uma API Rest de um hotel.<br>
 Projeto denvolvido em Node.js com framework Express.<br>
 Onde cada colaboradora ficou responsável por uma entidade e suas respectimas rotas, em cada entidade  o metódo CRUD foi realizado.
@@ -115,7 +115,7 @@ https://transilvania-hotel.herokuapp.com/ <br>
 ```
 :dart: Delete-hospedes <br>
 ```js
-//Troque ":id" pelo id que você quer deletar. <br>
+//Troque ":id" pelo id que você quer deletar. 
 /hospedes/:id
 ```
 :speech_balloon: Resposta <br>

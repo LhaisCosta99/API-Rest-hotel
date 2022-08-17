@@ -4,6 +4,7 @@ import HospedesDAO from "./DAO/HospedesDAO.js";
 
 import ReservasController from "./controllers/ReservasController.js";
 import ReservasDAO from "./DAO/ReservasDAO.js";
+
 import cors from "cors"
 
 const app = express()
@@ -44,8 +45,6 @@ app.get("/", (req, res)=>{
 })
 
 HospedesController.rotas(app)
-ReservasController.rotas(app)
-
 try {
     await HospedesDAO.criaTabelaHospedes();
     console.log("Tabela hospedes criada com sucesso!");
@@ -55,3 +54,5 @@ try {
 } catch (erro) {
     console.log(erro.message)
 }
+ReservasController.rotas(app)
+
