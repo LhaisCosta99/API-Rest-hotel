@@ -52,14 +52,14 @@ ReservasController.rotas(app)
 QuartosController.rotas(app)
 
 try {
-    await HospedesDAO.criaTabelaHospedes();
+    HospedesDAO.criaTabelaHospedes();
     console.log("Tabela hospedes criada com sucesso!");
-    await ReservasDAO.criaTabelaReservas();
+    ReservasDAO.criaTabelaReservas();
     console.log("Tabela reservas criada com sucesso!");
-    await QuartosDAO.criaTabelaQuartos();
+    QuartosDAO.criaTabelaQuartos();
     console.log("Tabela quartos criada com sucesso!");
 } catch (erro) {
     console.log(erro.message)
 }
-ReservasController.rotas(app)
+
 
