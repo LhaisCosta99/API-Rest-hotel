@@ -308,7 +308,7 @@ https://transilvania-hotel.herokuapp.com/ <br>
 }
 ```
 
-## :people_hugging: Links externos :people_hugging:
+## :paperclip: Links externos :paperclip:
  https://developer.mozilla.org/pt-BR/docs/Learn/Server-side/Express_Nodejs/Introduction <br>
 https://developer.mozilla.org/pt-BR/docs/Glossary/CORS <br>
 https://nodejs.org/en/knowledge/getting-started/npm/what-is-npm/ <br>
@@ -317,8 +317,40 @@ https://mundodacomputacaointegral.blogspot.com/2021/04/conhecendo-o-insomnia.htm
 https://developer.mozilla.org/pt-BR/docs/Glossary/CRUD
 
 
-## :people_hugging: Colaboradoras :people_hugging:
-:pen: Carol <br>
-:pen: Ivy <br>
-:pen: Lhaís <br>
-:pen: Luana <br>
+## 🤜 Colaboradoras 🤛
+<table>      
+  <tr>    
+    <td align="center">
+      <a href="https://github.com/LhaisCosta99">
+        <img src="https://avatars.githubusercontent.com/u/102974727?v=4" width="100px;" alt="Foto de perfil do Github"/><br>
+        <sub>
+          <b>Lhaís Costa</b>
+        </sub>
+      </a>
+    </td>    
+    <td align="center">
+      <a href="https://github.com/carolfranca0310">
+        <img src="https://avatars.githubusercontent.com/u/98667566?v=4" width="100px;" alt="Foto de perfil do Github"/><br>
+        <sub>
+          <b>Carol Araújo</b>
+        </sub>
+      </a>
+    </td> 
+    <td align="center">
+      <a href="https://github.com/imogawa">
+        <img src="https://avatars.githubusercontent.com/u/103681129?v=4" width="100px;" alt="Foto de perfil do Github"/><br>
+        <sub>
+          <b>Iviny Ogawa</b>
+        </sub>
+      </a>
+    </td>         
+    <td align="center">
+      <a href="https://github.com/luanaassisi">
+        <img src="https://avatars.githubusercontent.com/u/98328512?v=4" width="100px;" alt="Foto de perfil do Github"/><br>
+        <sub>
+          <b>Luana Assis</b>
+        </sub>
+      </a>
+    </td>      
+  </tr>     
+</table>
