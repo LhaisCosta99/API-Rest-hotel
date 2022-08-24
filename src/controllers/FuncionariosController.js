@@ -1,5 +1,5 @@
 import FuncionariosDAO from "../DAO/FuncionariosDAO.js"
-import FuncionariosModel from "../model/funcionariosModel.js"
+import FuncionariosModel from "../model/FuncionariosModel.js"
 import ValidacoesFuncionario from "../services/FuncionariosService.js"
 
 class FuncionariosController{
