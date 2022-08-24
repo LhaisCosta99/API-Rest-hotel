@@ -38,7 +38,7 @@ app.get("/", (req, res)=>{
         <br>
         <a> <h3>Quartos:</h3> https://transilvania-hotel.herokuapp.com/quartos </a>
         <br>
-        <a> <h3>Funcionarios:</h3> https://transilvania-hotel.herokuapp.com/funcionario </a>
+        <a> <h3>Funcionarios:</h3> https://transilvania-hotel.herokuapp.com/funcionarios </a>
         `)
     }
     res.send(`
