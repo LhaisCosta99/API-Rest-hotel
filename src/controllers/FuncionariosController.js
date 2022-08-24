@@ -1,5 +1,6 @@
 import FuncionariosDAO from "../DAO/FuncionariosDAO.js"
 import FuncionariosModel from "../model/funcionariosModel.js"
+import ValidacoesFuncionario from "../services/FuncionariosService.js"
 
 class FuncionariosController{
     static rotas(app){
@@ -27,7 +28,7 @@ class FuncionariosController{
 
         app.post("/funcionarios", async (req, res) => {
             try {
-                Validacoesfuncionario.validafuncionario(req.body.nome, req.body.funcao, req.body.turno)
+                ValidacoesFuncionario.validaFuncionario(req.body.nome, req.body.funcao, req.body.turno)
 
                 const funcionario = new FuncionariosModel(req.body.nome, req.body.funcao, req.body.turno)
 
