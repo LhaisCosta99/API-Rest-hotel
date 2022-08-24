@@ -8,6 +8,9 @@ import ReservasDAO from "./DAO/ReservasDAO.js";
 import QuartosController from "./controllers/QuartosController.js";
 import QuartosDAO from "./DAO/QuartosDAO.js";
 
+import FuncionariosController from "./controllers/FuncionariosController.js";
+import FuncionariosDAO from "./DAO/FuncionariosDAO.js";
+
 import cors from "cors"
 
 const app = express()
@@ -34,6 +37,8 @@ app.get("/", (req, res)=>{
         <a> <h3>Reservas:</h3> https://transilvania-hotel.herokuapp.com/reservas </a>
         <br>
         <a> <h3>Quartos:</h3> https://transilvania-hotel.herokuapp.com/quartos </a>
+        <br>
+        <a> <h3>Funcionarios:</h3> https://transilvania-hotel.herokuapp.com/funcionario </a>
         `)
     }
     res.send(`
@@ -44,12 +49,15 @@ app.get("/", (req, res)=>{
     <a> <h3>Reservas:</h3> http://localhost:${port}/reservas </a>
     <br>
     <a> <h3>Quartos:</h3> http://localhost:${port}/quartos </a>
+    <br>
+    <a> <h3>Funcionarios:</h3> http://localhost:${port}/funcionarios</a>
     `)
 })
 
 HospedesController.rotas(app)
 ReservasController.rotas(app)
 QuartosController.rotas(app)
+FuncionariosController.rotas(app)
 
 try {
     HospedesDAO.criaTabelaHospedes();
@@ -58,6 +66,8 @@ try {
     console.log("Tabela reservas criada com sucesso!");
     QuartosDAO.criaTabelaQuartos();
     console.log("Tabela quartos criada com sucesso!");
+    FuncionariosDAO.criaTabelaFuncionarios();
+    console.log("Tabela funcionarios criada com sucesso!");
 } catch (erro) {
     console.log(erro.message)
 }
