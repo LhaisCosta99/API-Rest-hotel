@@ -6,7 +6,7 @@ class FuncionariosController{
     static rotas(app){
         app.get("/funcionarios", async(req, res)=>{
             try {                
-                const funcionarios = await FuncionariosDAO.listarTodosOsfuncionarios()
+                const funcionarios = await FuncionariosDAO.listarTodosOsFuncionarios()
                 res.status(200).json(funcionarios)
             } catch (erro) {
                 res.status(404).json(erro.message)
@@ -51,13 +51,38 @@ class FuncionariosController{
                     throw new Erro("Funcionário não encontrado")
                 }
 
-                const resposta = await FuncionariosDAO.deletarFuncionariosPorID(id)
+                const resposta = await FuncionariosDAO.deletarFuncionarioPorID(id)
 
                 res.status(200).json(resposta)
 
             } catch (erro) {    
                 res.status(404).json({Erro: erro.message, id})
             }
+        })
+
+        app.patch("/funcionarios/:id", async (req, res)=>{
+            const id = req.params.id
+            const body = Object.entries(req.body)
+            try {                
+                const funcionario = await FuncionariosDAO.listarFuncionariosPorID(id)
+
+                if(!funcionario.id){
+                    throw new Error("Funcionário não encontrado para esse id")
+                }
+
+                body.forEach((elemento) => funcionario[elemento[0]] = elemento[1])
+
+                delete funcionario.id
+
+                ValidacoesFuncionario.validaFuncionario(funcionario.nome, funcionario.turno, funcionario.funcao)
+                const resposta = await FuncionariosDAO.atualizarFuncionarioPorID(id, funcionario)
+
+                res.status(200).json(resposta)
+
+            } catch (erro) {
+                res.status(400).json({message: erro.message, id})
+            }
+            
         })
     }
 
