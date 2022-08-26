@@ -54,7 +54,7 @@ npm start
 
 https://transilvania-hotel.herokuapp.com/ <br>
 
-## :footprints: Link Da Apresmtação footprints:
+## :heavy_check_mark: Link Da Apresentação Do Projeto :heavy_check_mark:
 
 https://www.canva.com/design/DAFHpgM0rSY/sv5aI4HErXk1t0cxCmZurw/edit?utm_content=DAFHpgM0rSY&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton <br>
 
