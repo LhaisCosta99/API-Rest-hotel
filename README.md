@@ -36,11 +36,11 @@ nodemon: "^2.0.19"
 
 :small_blue_diamond: Clonando o repositório:
 ```
-git clone https://github.com/LhaisCosta99/Projeto-final-M4
+git clone https://github.com/LhaisCosta99/API-Rest-hotel
 ```
 :small_blue_diamond: Entrando na pasta:
 ```
-cd Projeto-final-M4
+cd API-Rest-hotel
 ```
 :small_blue_diamond: Para instalar pacotes:
 ```
