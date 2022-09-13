@@ -45,7 +45,7 @@ app.get("/", (req, res)=>{
         res.send(`
         <h1> Bem vindo ao Hotel Transilvania API </h1>
         <h2> Para acessar as rotas das entidades utilize os endereços a seguir: </h2>
-        <a> <h3>Hospedes:</h3> https://transilvania-hotel.herokuapp.com/hospedes </a>
+        <a> <h3>Hospedes:</h3> https://api-rest-hotel.vercel.app/hospedes </a>
         <br>
         <a> <h3>Reservas:</h3> https://transilvania-hotel.herokuapp.com/reservas </a>
         <br>
