@@ -5,7 +5,7 @@ class QuartosController{
     static rotas(app){
         app.get("/quartos", async(req, res)=>{
             try {                
-                const quartos = await QuartosRepository.buscarTodasOsQuartos()
+                const quartos = await QuartosRepository.buscarTodosOsQuartos()
                 res.status(200).json(quartos)
             } catch (erro) {
                 res.status(404).json(erro.message)

@@ -4,11 +4,7 @@ import * as dotenv from "dotenv";
 import HospedesController from "./src/controllers/HospedesController.js";
 import ReservasController from "./src/controllers/ReservasController.js";
 import QuartosController from "./src/controllers/QuartosController.js";
-
-
-// import FuncionariosController from "./src/controllers/FuncionariosController.js";
-// import FuncionariosDAO from "./src/DAO/FuncionariosDAO.js";
-
+import FuncionariosController from "./src/controllers/FuncionariosController.js";
 import cors from "cors"
 
 dotenv.config()
@@ -67,11 +63,4 @@ app.get("/", (req, res)=>{
 HospedesController.rotas(app)
 ReservasController.rotas(app)
 QuartosController.rotas(app)
-// FuncionariosController.rotas(app)
-
-// try {
-//     FuncionariosDAO.criaTabelaFuncionarios();
-//     console.log("Tabela funcionarios criada com sucesso!");
-// } catch (erro) {
-//     console.log(erro.message)
-// }
+FuncionariosController.rotas(app)
