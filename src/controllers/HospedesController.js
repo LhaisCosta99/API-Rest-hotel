@@ -1,12 +1,11 @@
-import HospedesDAO from "../DAO/HospedesDAO.js"
-import HospedesModel from "../model/HospedesModel.js"
+import HospedesRepository from "../repository/HospedesRepository.js"
 import ValidacoesHospede from "../services/hospedesService.js"
 
 class HospedesController{
     static rotas(app){
         app.get("/hospedes", async(req, res)=>{
             try {                
-                const hospedes = await HospedesDAO.listarTodosOsHospedes()
+                const hospedes = await HospedesRepository.buscarTodosOsHospedes()
                 res.status(200).json(hospedes)
             } catch (erro) {
                 res.status(404).json(erro.message)
@@ -15,9 +14,9 @@ class HospedesController{
 
         app.get("/hospedes/:id", async (req, res) => {
             try {
-                const hospede = await HospedesDAO.listarHospedesPorID(req.params.id)
+                const hospede = await HospedesRepository.buscarHospedePorId(req.params.id)
 
-                if(!hospede.id){
+                if(!hospede._id){
                     throw new Error("Hospede não encontrado para esse id")
                 }
                 res.status(200).json(hospede)
@@ -30,9 +29,9 @@ class HospedesController{
             try {
                 ValidacoesHospede.validaHospede(req.body.nome, req.body.cpf, req.body.email, req.body.telefone)
 
-                const hospede = new HospedesModel(req.body.nome, req.body.cpf, req.body.email, req.body.telefone)
+                const hospede = req.body
 
-                const inserir = await HospedesDAO.criarHospede(hospede)
+                const inserir = await HospedesRepository.criarHospede(hospede)
                 
                 res.status(201).json(inserir)
 
@@ -45,9 +44,9 @@ class HospedesController{
             const id = req.params.id
             const body = Object.entries(req.body)
             try {                
-                const hospede = await HospedesDAO.listarHospedesPorID(id)
+                const hospede = await HospedesRepository.buscarHospedePorId(id)
 
-                if(!hospede.id){
+                if(!hospede._id){
                     throw new Error("Hospede não encontrado para esse id")
                 }
 
@@ -56,7 +55,7 @@ class HospedesController{
                 delete hospede.id
 
                 ValidacoesHospede.validaHospede(hospede.nome, hospede.cpf, hospede.email, hospede.telefone)
-                const resposta = await HospedesDAO.atualizarHospedesPorID(id, hospede)
+                const resposta = await HospedesRepository.atualizaHospedePorId(id, hospede)
 
                 res.status(200).json(resposta)
 
@@ -70,13 +69,13 @@ class HospedesController{
             const id = req.params.id
             try {     
                 
-                const hospede = await HospedesDAO.listarHospedesPorID(id)
+                const hospede = await HospedesRepository.buscarHospedePorId(id)
 
-                if(!hospede.id){
+                if(!hospede._id){
                     throw new Erro("Hospede não encontrado")
                 }
 
-                const resposta = await HospedesDAO.deletarHospedesPorID(id)
+                const resposta = await HospedesRepository.deletaHospedePorId(id)
 
                 res.status(200).json(resposta)
 

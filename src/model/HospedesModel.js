@@ -1,10 +1,10 @@
-class HospedesModel{
-    constructor(nome, cpf, email, telefone){
-        this.nome = nome
-        this.cpf = cpf
-        this.email = email
-        this.telefone = telefone
-    }
-}
+import mongoose from "mongoose";
 
-export default HospedesModel
+const Hospedes = mongoose.model('Hospede',{
+    nome: String,
+    cpf: String,
+    email: String,
+    telefone: String
+})
+
+export default Hospedes

@@ -1,31 +1,44 @@
 import express from "express";
-import HospedesController from "./controllers/HospedesController.js";
-import HospedesDAO from "./DAO/HospedesDAO.js";
+import mongoose from "mongoose";
+import * as dotenv from "dotenv";
+import HospedesController from "./src/controllers/HospedesController.js";
 
-import ReservasController from "./controllers/ReservasController.js";
-import ReservasDAO from "./DAO/ReservasDAO.js";
+import ReservasController from "./src/controllers/ReservasController.js";
+import ReservasDAO from "./src/DAO/ReservasDAO.js";
 
-import QuartosController from "./controllers/QuartosController.js";
-import QuartosDAO from "./DAO/QuartosDAO.js";
+import QuartosController from "./src/controllers/QuartosController.js";
+import QuartosDAO from "./src/DAO/QuartosDAO.js";
 
-import FuncionariosController from "./controllers/FuncionariosController.js";
-import FuncionariosDAO from "./DAO/FuncionariosDAO.js";
+import FuncionariosController from "./src/controllers/FuncionariosController.js";
+import FuncionariosDAO from "./src/DAO/FuncionariosDAO.js";
 
 import cors from "cors"
+
+dotenv.config()
 
 const app = express()
 const port = process.env.PORT || 3000
 const environment = process.env.ENVIRONMENT || "DEV"
+const user = process.env.USER_DB
+const password = process.env.PASSWORD
+const database = process.env.DATABASE
 
 app.use(express.json())
 app.use(cors("https://transilvania-hotel.herokuapp.com"))
 
-app.listen(port, () => {
-    if(environment === "PROD")  {
-        console.log()
-    }
-    console.log(`http://localhost:${port}`)
-})
+try {
+    await mongoose.connect(`mongodb+srv://${user}:${password}@cluster0.vqfs4id.mongodb.net/${database}?retryWrites=true&w=majority`)
+    console.log("conectado ao mongo")
+    app.listen(port, () => {
+        if(environment === "PROD")  {
+            console.log("Ambiente de produção.")
+        }
+        console.log(`http://localhost:${port}`)
+    })
+} catch (error) {
+    console.log(error.message)
+}
+
 
 app.get("/", (req, res)=>{
     if(environment === "PROD"){
@@ -60,8 +73,6 @@ QuartosController.rotas(app)
 FuncionariosController.rotas(app)
 
 try {
-    HospedesDAO.criaTabelaHospedes();
-    console.log("Tabela hospedes criada com sucesso!");
     ReservasDAO.criaTabelaReservas();
     console.log("Tabela reservas criada com sucesso!");
     QuartosDAO.criaTabelaQuartos();
@@ -71,5 +82,3 @@ try {
 } catch (erro) {
     console.log(erro.message)
 }
-
-

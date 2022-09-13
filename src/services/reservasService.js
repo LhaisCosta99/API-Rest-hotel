@@ -1,12 +1,12 @@
-import HospedesDAO from "../DAO/HospedesDAO.js"
+import HospedesRepository from "../repository/HospedesRepository.js";
 
 class ValidacoesReserva {
 
-    static ValidaHospede(id) {
+    static async ValidaHospede(id) {
         if (id == 0 || id == undefined || id == null)
             throw new Error("ID do Cliente está inválido, reveja a requisição")
 
-        let cliente = HospedesDAO.listarHospedesPorID(id);
+        let cliente = await HospedesRepository.buscarHospedePorId(id);
         if (cliente == null)
             throw new Error("Hospede não encontrado, reveja a requisição ou cadastre o novo hospede")
 
@@ -16,11 +16,6 @@ class ValidacoesReserva {
     static ValidaQuarto(idQuarto) {
         if (idQuarto == 0 || idQuarto == null || idQuarto == undefined)
             throw new Error("ID do Quarto está inválido, reveja a requisição")
-
-        // let Quarto = quartoDAO.listarQuartoPorID(id);
-        // if (Quarto == null)
-        //     throw "Quarto não cadastrado, reveja a requisição ou cadastre o quarto"
-
 
         return true;
     }
