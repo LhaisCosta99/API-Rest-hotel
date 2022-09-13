@@ -44,7 +44,7 @@ app.get("/", (req, res)=>{
         <br>
         <a> <h3>Quartos:</h3> https://api-rest-hotel.vercel.app/quartos </a>
         <br>
-        <a> <h3>Funcionarios:</h3> https://transilvania-hotel.herokuapp.com/funcionarios </a>
+        <a> <h3>Funcionarios:</h3> https://api-rest-hotel.vercel.app/funcionarios </a>
         `)
     }
     res.send(`
