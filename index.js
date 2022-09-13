@@ -3,14 +3,14 @@ import mongoose from "mongoose";
 import * as dotenv from "dotenv";
 import HospedesController from "./src/controllers/HospedesController.js";
 
-import ReservasController from "./src/controllers/ReservasController.js";
-import ReservasDAO from "./src/DAO/ReservasDAO.js";
+// import ReservasController from "./src/controllers/ReservasController.js";
+// import ReservasDAO from "./src/DAO/ReservasDAO.js";
 
-import QuartosController from "./src/controllers/QuartosController.js";
-import QuartosDAO from "./src/DAO/QuartosDAO.js";
+// import QuartosController from "./src/controllers/QuartosController.js";
+// import QuartosDAO from "./src/DAO/QuartosDAO.js";
 
-import FuncionariosController from "./src/controllers/FuncionariosController.js";
-import FuncionariosDAO from "./src/DAO/FuncionariosDAO.js";
+// import FuncionariosController from "./src/controllers/FuncionariosController.js";
+// import FuncionariosDAO from "./src/DAO/FuncionariosDAO.js";
 
 import cors from "cors"
 
@@ -68,17 +68,17 @@ app.get("/", (req, res)=>{
 })
 
 HospedesController.rotas(app)
-ReservasController.rotas(app)
-QuartosController.rotas(app)
-FuncionariosController.rotas(app)
+// ReservasController.rotas(app)
+// QuartosController.rotas(app)
+// FuncionariosController.rotas(app)
 
-try {
-    ReservasDAO.criaTabelaReservas();
-    console.log("Tabela reservas criada com sucesso!");
-    QuartosDAO.criaTabelaQuartos();
-    console.log("Tabela quartos criada com sucesso!");
-    FuncionariosDAO.criaTabelaFuncionarios();
-    console.log("Tabela funcionarios criada com sucesso!");
-} catch (erro) {
-    console.log(erro.message)
-}
+// try {
+//     ReservasDAO.criaTabelaReservas();
+//     console.log("Tabela reservas criada com sucesso!");
+//     QuartosDAO.criaTabelaQuartos();
+//     console.log("Tabela quartos criada com sucesso!");
+//     FuncionariosDAO.criaTabelaFuncionarios();
+//     console.log("Tabela funcionarios criada com sucesso!");
+// } catch (erro) {
+//     console.log(erro.message)
+// }
