@@ -1,11 +1,11 @@
-class ReservasModel{
-    constructor(idCliente, idQuarto, qtdDias, checkIn, checkOut){
-        this.idCliente = idCliente
-        this.qtdDias = qtdDias
-        this.checkIn = checkIn
-        this.checkOut = checkOut
-        this.idQuarto = idQuarto
-    }
-}
+import mongoose from "mongoose";
 
-export default ReservasModel
+const Reservas = mongoose.model('Reserva',{
+    idCliente: String,
+    qtdDias: String,
+    checkIn: String,
+    checkOut: String,
+    idQuarto: String
+})
+
+export default Reservas;

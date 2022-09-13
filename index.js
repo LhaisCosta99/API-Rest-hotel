@@ -2,9 +2,8 @@ import express from "express";
 import mongoose from "mongoose";
 import * as dotenv from "dotenv";
 import HospedesController from "./src/controllers/HospedesController.js";
+import ReservasController from "./src/controllers/ReservasController.js";
 
-// import ReservasController from "./src/controllers/ReservasController.js";
-// import ReservasDAO from "./src/DAO/ReservasDAO.js";
 
 // import QuartosController from "./src/controllers/QuartosController.js";
 // import QuartosDAO from "./src/DAO/QuartosDAO.js";
@@ -47,7 +46,7 @@ app.get("/", (req, res)=>{
         <h2> Para acessar as rotas das entidades utilize os endereços a seguir: </h2>
         <a> <h3>Hospedes:</h3> https://api-rest-hotel.vercel.app/hospedes </a>
         <br>
-        <a> <h3>Reservas:</h3> https://transilvania-hotel.herokuapp.com/reservas </a>
+        <a> <h3>Reservas:</h3> https://api-rest-hotel.vercel.app/reservas </a>
         <br>
         <a> <h3>Quartos:</h3> https://transilvania-hotel.herokuapp.com/quartos </a>
         <br>
@@ -68,13 +67,11 @@ app.get("/", (req, res)=>{
 })
 
 HospedesController.rotas(app)
-// ReservasController.rotas(app)
+ReservasController.rotas(app)
 // QuartosController.rotas(app)
 // FuncionariosController.rotas(app)
 
 // try {
-//     ReservasDAO.criaTabelaReservas();
-//     console.log("Tabela reservas criada com sucesso!");
 //     QuartosDAO.criaTabelaQuartos();
 //     console.log("Tabela quartos criada com sucesso!");
 //     FuncionariosDAO.criaTabelaFuncionarios();
