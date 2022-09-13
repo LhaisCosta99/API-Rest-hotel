@@ -1,16 +1,16 @@
 import express from "express";
 import mongoose from "mongoose";
 import * as dotenv from "dotenv";
-import HospedesController from "./controllers/HospedesController.js";
+import HospedesController from "./src/controllers/HospedesController.js";
 
-import ReservasController from "./controllers/ReservasController.js";
-import ReservasDAO from "./DAO/ReservasDAO.js";
+import ReservasController from "./src/controllers/ReservasController.js";
+import ReservasDAO from "./src/DAO/ReservasDAO.js";
 
-import QuartosController from "./controllers/QuartosController.js";
-import QuartosDAO from "./DAO/QuartosDAO.js";
+import QuartosController from "./src/controllers/QuartosController.js";
+import QuartosDAO from "./src/DAO/QuartosDAO.js";
 
-import FuncionariosController from "./controllers/FuncionariosController.js";
-import FuncionariosDAO from "./DAO/FuncionariosDAO.js";
+import FuncionariosController from "./src/controllers/FuncionariosController.js";
+import FuncionariosDAO from "./src/DAO/FuncionariosDAO.js";
 
 import cors from "cors"
 
