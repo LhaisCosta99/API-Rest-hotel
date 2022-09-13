@@ -2,15 +2,12 @@ import express from "express";
 import mongoose from "mongoose";
 import * as dotenv from "dotenv";
 import HospedesController from "./src/controllers/HospedesController.js";
-
 import ReservasController from "./src/controllers/ReservasController.js";
-import ReservasDAO from "./src/DAO/ReservasDAO.js";
-
 import QuartosController from "./src/controllers/QuartosController.js";
-import QuartosDAO from "./src/DAO/QuartosDAO.js";
 
-import FuncionariosController from "./src/controllers/FuncionariosController.js";
-import FuncionariosDAO from "./src/DAO/FuncionariosDAO.js";
+
+// import FuncionariosController from "./src/controllers/FuncionariosController.js";
+// import FuncionariosDAO from "./src/DAO/FuncionariosDAO.js";
 
 import cors from "cors"
 
@@ -45,11 +42,11 @@ app.get("/", (req, res)=>{
         res.send(`
         <h1> Bem vindo ao Hotel Transilvania API </h1>
         <h2> Para acessar as rotas das entidades utilize os endereços a seguir: </h2>
-        <a> <h3>Hospedes:</h3> https://transilvania-hotel.herokuapp.com/hospedes </a>
+        <a> <h3>Hospedes:</h3> https://api-rest-hotel.vercel.app/hospedes </a>
         <br>
-        <a> <h3>Reservas:</h3> https://transilvania-hotel.herokuapp.com/reservas </a>
+        <a> <h3>Reservas:</h3> https://api-rest-hotel.vercel.app/reservas </a>
         <br>
-        <a> <h3>Quartos:</h3> https://transilvania-hotel.herokuapp.com/quartos </a>
+        <a> <h3>Quartos:</h3> https://api-rest-hotel.vercel.app/quartos </a>
         <br>
         <a> <h3>Funcionarios:</h3> https://transilvania-hotel.herokuapp.com/funcionarios </a>
         `)
@@ -70,15 +67,11 @@ app.get("/", (req, res)=>{
 HospedesController.rotas(app)
 ReservasController.rotas(app)
 QuartosController.rotas(app)
-FuncionariosController.rotas(app)
+// FuncionariosController.rotas(app)
 
-try {
-    ReservasDAO.criaTabelaReservas();
-    console.log("Tabela reservas criada com sucesso!");
-    QuartosDAO.criaTabelaQuartos();
-    console.log("Tabela quartos criada com sucesso!");
-    FuncionariosDAO.criaTabelaFuncionarios();
-    console.log("Tabela funcionarios criada com sucesso!");
-} catch (erro) {
-    console.log(erro.message)
-}
+// try {
+//     FuncionariosDAO.criaTabelaFuncionarios();
+//     console.log("Tabela funcionarios criada com sucesso!");
+// } catch (erro) {
+//     console.log(erro.message)
+// }

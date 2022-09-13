@@ -1,43 +1,39 @@
-import QuartosDAO from "../DAO/QuartosDAO.js"
-import QuartosModel from "../model/QuartosModel.js"
+import QuartosRepository from "../repository/QuartosRepository.js"
 import ValidacoesQuarto from "../services/quartosService.js"
 
 class QuartosController{
     static rotas(app){
         app.get("/quartos", async(req, res)=>{
             try {                
-                const quartos = await QuartosDAO.listarTodosOsQuartos()
+                const quartos = await QuartosRepository.buscarTodasOsQuartos()
                 res.status(200).json(quartos)
             } catch (erro) {
                 res.status(404).json(erro.message)
             }
         })
 
-        app.get("/quartos/:numero", async (req, res) => {
+        app.get("/quartos/:id", async (req, res) => {
             try {
-                const quarto = await QuartosDAO.listarQuartosPorNumero(req.params.numero)
+                const quarto = await QuartosRepository.atualizaQuartoPorId(req.params.id)
 
                 if(quarto == null || quarto == undefined){
-                    throw new Error("Número de quarto inválido")
+                    throw new Error("Id de quarto inválido")
                 }
                 res.status(200).json(quarto)
             } catch (erro) {
-                res.status(404).json({message: erro.message, numero: req.params.numero})
+                res.status(404).json({message: erro.message, id: req.params.id})
             }
         })
 
         app.post("/quartos", async (req, res) => {
             try {
-                ValidacoesQuarto.validaNumero(req.body.numero, req.body.tipo, req.body.status)
-
-                let criado = await QuartosDAO.listarQuartosPorNumero(req.body.numero) 
                 if (criado != null || criado != undefined) {
                     throw new Error("Já existe um quarto com este número")
                 }
 
-                const quarto = new QuartosModel(req.body.numero, req.body.tipo, req.body.status)
+                const quarto = req.body
 
-                const inserir = await QuartosDAO.criarQuarto(quarto)
+                const inserir = await QuartosRepository.criarQuarto(quarto)
                 
                 res.status(201).json(inserir)
 
@@ -46,11 +42,11 @@ class QuartosController{
             }
         })
     
-        app.patch("/quartos/:numero", async (req, res)=>{
-            const numero = req.params.numero
+        app.patch("/quartos/:id", async (req, res)=>{
+            const id = req.params.id
             const body = Object.entries(req.body)
             try {                
-                const quarto = await QuartosDAO.listarQuartosPorNumero(numero)
+                const quarto = await QuartosRepository.atualizaQuartoPorId(id)
 
                 if(quarto == null || quarto == undefined){
                     throw new Error("Número de quarto inválido")
@@ -58,35 +54,34 @@ class QuartosController{
 
                 body.forEach((elemento) => quarto[elemento[0]] = elemento[1])
 
-                delete quarto.numero
+                delete quarto._id
 
-                ValidacoesQuarto.validaNumero(req.body.numero, req.body.tipo, req.body.status)
-                const resposta = await QuartosDAO.atualizarQuartosPorNumero(numero, quarto)
+                const resposta = await QuartosRepository.atualizaQuartoPorId(id, quarto)
 
                 res.status(200).json(resposta)
 
             } catch (erro) {
-                res.status(400).json({message: erro.message, numero})
+                res.status(400).json({message: erro.message, id})
             }
             
         })
 
-        app.delete("/quartos/:numero", async (req, res) => {
-            const numero = req.params.numero
+        app.delete("/quartos/:id", async (req, res) => {
+            const id = req.params.id
             try {     
                 
-                const quarto = await QuartosDAO.listarQuartosPorNumero(numero)
+                const quarto = await QuartosRepository.buscarQuartoPorId(id)
 
                 if(quarto == null || quarto == undefined){
                     throw new Error("Número de quarto inexistente")
                 }
 
-                const resposta = await QuartosDAO.deletarQuartosPorNumero(numero)
+                const resposta = await QuartosRepository.deletaQuartoPorId(id)
 
                 res.status(200).json(resposta)
 
             } catch (erro) {    
-                res.status(404).json({Erro: erro.message, numero})
+                res.status(404).json({Erro: erro.message, id})
             }
         })
 

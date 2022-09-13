@@ -52,7 +52,7 @@ class HospedesController{
 
                 body.forEach((elemento) => hospede[elemento[0]] = elemento[1])
 
-                delete hospede.id
+                delete hospede._id
 
                 ValidacoesHospede.validaHospede(hospede.nome, hospede.cpf, hospede.email, hospede.telefone)
                 const resposta = await HospedesRepository.atualizaHospedePorId(id, hospede)

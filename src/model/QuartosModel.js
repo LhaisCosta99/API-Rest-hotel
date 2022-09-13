@@ -1,9 +1,9 @@
-class QuartosModel { 
-    constructor (numero, tipo, status) {
-        this.numero = numero
-        this.tipo = tipo 
-        this.status = status
-    }
-}
+import mongoose from "mongoose";
 
-export default QuartosModel;
+const Quartos = mongoose.model('Quarto',{
+    numero: String,
+    tipo: String,
+    status: String
+})
+
+export default Quartos
