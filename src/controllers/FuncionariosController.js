@@ -1,12 +1,11 @@
-import FuncionariosDAO from "../DAO/FuncionariosDAO.js"
-import FuncionariosModel from "../model/FuncionariosModel.js"
+import FuncionariosRepository from "../repository/FuncionariosRepository.js"
 import ValidacoesFuncionario from "../services/FuncionariosService.js"
 
 class FuncionariosController{
     static rotas(app){
         app.get("/funcionarios", async(req, res)=>{
             try {                
-                const funcionarios = await FuncionariosDAO.listarTodosOsFuncionarios()
+                const funcionarios = await FuncionariosRepository.buscarTodosOsFuncionarios()
                 res.status(200).json(funcionarios)
             } catch (erro) {
                 res.status(404).json(erro.message)
@@ -15,9 +14,9 @@ class FuncionariosController{
 
         app.get("/funcionarios/:id", async (req, res) => {
             try {
-                const funcionario = await FuncionariosDAO.listarFuncionariosPorID(req.params.id)
+                const funcionario = await FuncionariosRepository.buscarFuncionarioPorId(req.params.id)
 
-                if(!funcionario.id){
+                if(!funcionario._id){
                     throw new Error("funcionario não encontrado para esse id")
                 }
                 res.status(200).json(funcionario)
@@ -30,9 +29,9 @@ class FuncionariosController{
             try {
                 ValidacoesFuncionario.validaFuncionario(req.body.nome, req.body.funcao, req.body.turno)
 
-                const funcionario = new FuncionariosModel(req.body.nome, req.body.funcao, req.body.turno)
+                const funcionario = req.body
 
-                const inserir = await FuncionariosDAO.criarFuncionario(funcionario)
+                const inserir = await FuncionariosRepository.criarFuncionario(funcionario)
                 
                 res.status(201).json(inserir)
 
@@ -45,13 +44,13 @@ class FuncionariosController{
             const id = req.params.id
             try {     
                 
-                const funcionario = await FuncionariosDAO.listarFuncionariosPorID(id)
+                const funcionario = await FuncionariosRepository.buscarFuncionarioPorId(id)
 
-                if(!funcionario.id){
+                if(!funcionario._id){
                     throw new Erro("Funcionário não encontrado")
                 }
 
-                const resposta = await FuncionariosDAO.deletarFuncionarioPorID(id)
+                const resposta = await FuncionariosRepository.deletaFuncionarioPorId(id)
 
                 res.status(200).json(resposta)
 
@@ -64,18 +63,18 @@ class FuncionariosController{
             const id = req.params.id
             const body = Object.entries(req.body)
             try {                
-                const funcionario = await FuncionariosDAO.listarFuncionariosPorID(id)
+                const funcionario = req.body
 
-                if(!funcionario.id){
+                if(!funcionario._id){
                     throw new Error("Funcionário não encontrado para esse id")
                 }
 
                 body.forEach((elemento) => funcionario[elemento[0]] = elemento[1])
 
-                delete funcionario.id
+                delete funcionario._id
 
                 ValidacoesFuncionario.validaFuncionario(funcionario.nome, funcionario.turno, funcionario.funcao)
-                const resposta = await FuncionariosDAO.atualizarFuncionarioPorID(id, funcionario)
+                const resposta = await FuncionariosRepository.atualizaFuncionarioPorId(id, funcionario)
 
                 res.status(200).json(resposta)
 

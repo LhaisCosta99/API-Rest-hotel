@@ -1,9 +1,9 @@
-class FuncionariosModel{
-    constructor(nome, funcao, turno){
-        this.nome = nome
-        this.funcao = funcao
-        this.turno = turno
-    }
-}
+import mongoose from "mongoose";
 
-export default FuncionariosModel
+const Funcionarios = mongoose.model('Funcionario',{
+    nome: String,
+    funcao: String,
+    turno: String
+})
+
+export default Funcionarios;

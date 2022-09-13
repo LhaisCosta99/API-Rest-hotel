@@ -7,7 +7,7 @@ class QuartosRepository {
         return response
     }
 
-    static async buscarTodasOsQuartos(){
+    static async buscarTodosOsQuartos(){
         const response = await RepositoryGeneral.buscarTodos(Quartos)
         return response
     }
