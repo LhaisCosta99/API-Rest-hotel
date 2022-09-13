@@ -55,7 +55,7 @@ class ReservasController {
 
                 delete Reserva._id
 
-                ValidacoesReserva.ValidaReservas(req.body.idCliente, req.body.idQuarto, req.body.qtdDias, req.body.checkIn, req.body.checkOut)
+                //ValidacoesReserva.ValidaReservas(req.body.idCliente, req.body.idQuarto, req.body.qtdDias, req.body.checkIn, req.body.checkOut)
                 const resposta = await ReservasRepository.atualizaReservaPorId(id, Reserva)
 
                 res.status(200).json(resposta)

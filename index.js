@@ -3,10 +3,8 @@ import mongoose from "mongoose";
 import * as dotenv from "dotenv";
 import HospedesController from "./src/controllers/HospedesController.js";
 import ReservasController from "./src/controllers/ReservasController.js";
+import QuartosController from "./src/controllers/QuartosController.js";
 
-
-// import QuartosController from "./src/controllers/QuartosController.js";
-// import QuartosDAO from "./src/DAO/QuartosDAO.js";
 
 // import FuncionariosController from "./src/controllers/FuncionariosController.js";
 // import FuncionariosDAO from "./src/DAO/FuncionariosDAO.js";
@@ -48,7 +46,7 @@ app.get("/", (req, res)=>{
         <br>
         <a> <h3>Reservas:</h3> https://api-rest-hotel.vercel.app/reservas </a>
         <br>
-        <a> <h3>Quartos:</h3> https://transilvania-hotel.herokuapp.com/quartos </a>
+        <a> <h3>Quartos:</h3> https://api-rest-hotel.vercel.app/quartos </a>
         <br>
         <a> <h3>Funcionarios:</h3> https://transilvania-hotel.herokuapp.com/funcionarios </a>
         `)
@@ -68,12 +66,10 @@ app.get("/", (req, res)=>{
 
 HospedesController.rotas(app)
 ReservasController.rotas(app)
-// QuartosController.rotas(app)
+QuartosController.rotas(app)
 // FuncionariosController.rotas(app)
 
 // try {
-//     QuartosDAO.criaTabelaQuartos();
-//     console.log("Tabela quartos criada com sucesso!");
 //     FuncionariosDAO.criaTabelaFuncionarios();
 //     console.log("Tabela funcionarios criada com sucesso!");
 // } catch (erro) {
