@@ -1,3 +1,5 @@
+import HospedesRepository from "../repository/HospedesRepository.js"
+
 class ValidacoesHospede{
     static validaNome(nome){
         if(nome.length >= 3){
@@ -14,9 +16,13 @@ class ValidacoesHospede{
         }
         return true
     }
-    static validaEmail(email){
+    static async validaEmail(email){
         const regex = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+(\.[a-z]+)?$/i
         if(regex.test(email)){
+            const VerificaHospede = await HospedesRepository.buscarHospedePorEmail(email)
+            if(VerificaHospede._id){
+                throw new Error("Email já cadastrado.")
+            }
             return true
         } 
         else {
@@ -30,11 +36,12 @@ class ValidacoesHospede{
         }
         return true
     }
-    static validaHospede(nome, cpf, email, telefone){
+    static async validaHospede(nome, cpf, email, telefone){
+        const validaEmail = await this.validaEmail(email)
         const valida = 
         this.validaNome(nome) &&
         this.validaCPF(cpf) &&
-        this.validaEmail(email) && 
+        validaEmail && 
         this.validaTelefone(telefone)
 
         return valida
