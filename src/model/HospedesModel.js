@@ -4,7 +4,8 @@ const Hospedes = mongoose.model('Hospede',{
     nome: String,
     cpf: String,
     email: String,
-    telefone: String
+    telefone: String,
+    senha: String
 })
 
 export default Hospedes

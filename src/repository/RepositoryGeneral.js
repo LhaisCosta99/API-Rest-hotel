@@ -32,7 +32,7 @@ class RepositoryGeneral{
     }
     static async atualizarPorChave(EntidadeMongo, chave, value, input){
         await EntidadeMongo.updateOne({[chave]: value}, input)
-        return {message: "Registro atualizado com sucesso", email}
+        return {message: "Registro atualizado com sucesso", value}
     }
 }
 
