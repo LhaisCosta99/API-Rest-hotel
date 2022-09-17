@@ -37,7 +37,12 @@ class HospedesController{
                 res.status(201).json(inserir)
                 
             } catch (erro) {
-                res.status(400).json({message: erro.message})
+                if(erro.message == "Email já cadastrado."){
+                    res.status(406).json({message: erro.message})
+                }
+                else {
+                    res.status(400).json({message: erro.message})
+                }
             }
         })
 
