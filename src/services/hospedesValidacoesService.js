@@ -20,7 +20,7 @@ class ValidacoesHospede{
         const regex = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+(\.[a-z]+)?$/i
         if(regex.test(email)){
             const VerificaHospede = await HospedesRepository.buscarHospedePorEmail(email)
-            if(VerificaHospede._id){
+            if(VerificaHospede){
                 throw new Error("Email já cadastrado.")
             }
             return true
