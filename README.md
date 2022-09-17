@@ -73,7 +73,8 @@ https://www.canva.com/design/DAFHpgM0rSY/sv5aI4HErXk1t0cxCmZurw/edit?utm_content
     "nome": "Lhais",
     "cpf": "12345678950",
     "email": "lhais@lhais.com",
-    "telefone": "02140028926"
+    "telefone": "02140028926",
+	"senha":"senha"
 }
 ```
 :speech_balloon: Resposta <br>
@@ -82,6 +83,25 @@ https://www.canva.com/design/DAFHpgM0rSY/sv5aI4HErXk1t0cxCmZurw/edit?utm_content
 	"Sucesso": "Registro inserido com sucesso!"
 }
 ```
+
+```js
+// Informa se o usuário já registrado pode prosseguir no login ou não
+
+/hospedes/login
+
+{
+    "email": "lhais@lhais.com",
+    "senha": "senha"
+}
+```
+:speech_balloon: Resposta <br>
+```js
+{
+	"message": "Usuario autenticado com sucesso!",
+	"email": "lhais@lhais.com"
+}
+```
+
 :dart: Get-hospedes <br>
 ```js
 //Busca o ":id". O get que busca todos os registros na sua entidade.
@@ -115,6 +135,26 @@ https://www.canva.com/design/DAFHpgM0rSY/sv5aI4HErXk1t0cxCmZurw/edit?utm_content
 {
 	"message": "Registro atualizado com sucesso",
 	"id": "5"
+}
+```
+
+```js
+// Atualiza por email, deve obrigatóriamente ter no body o email do registro que deseja atualizar
+
+/hospede/update/email
+
+{
+	"email": "Email do registro a ser atualizado",
+	...,
+	"chave": "valor"
+}
+```
+
+:speech_balloon: Resposta <br>
+```js
+{
+	"message": "Registro atualizado com sucesso",
+	"email": "email"
 }
 ```
 :dart: Delete-hospedes <br>

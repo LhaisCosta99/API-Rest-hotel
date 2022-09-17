@@ -26,6 +26,16 @@ class HospedesRepository{
         const response = await RepositoryGeneral.deletarPorId(Hospedes, id)
         return response
     }
+
+    static async buscarHospedePorEmail(email){
+        const response = await RepositoryGeneral.buscarPorChave(Hospedes, 'email', email)
+        return response
+    }
+
+    static async atualizaHospedePorEmail(email, payload){
+        const response = await RepositoryGeneral.atualizarPorChave(Hospedes,'email', email, payload)
+        return response
+    }
 }
 
 export default HospedesRepository;

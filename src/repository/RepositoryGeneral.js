@@ -25,6 +25,15 @@ class RepositoryGeneral{
         await EntidadeMongo.findOneAndDelete({_id:id})
         return {message: "Registro deletado com sucesso", id}
     }
+
+    static async buscarPorChave(EntidadeMongo, chave, value){
+        const response = await EntidadeMongo.findOne({[chave]: value})
+        return response
+    }
+    static async atualizarPorChave(EntidadeMongo, chave, value, input){
+        await EntidadeMongo.updateOne({[chave]: value}, input)
+        return {message: "Registro atualizado com sucesso", value}
+    }
 }
 
 export default RepositoryGeneral;
