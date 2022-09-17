@@ -28,7 +28,7 @@ class HospedesController{
 
         app.post("/hospedes", async (req, res) => {
             try {
-                ValidacoesHospede.validaHospede(req.body.nome, req.body.cpf, req.body.email, req.body.telefone)
+                await ValidacoesHospede.validaHospede(req.body.nome, req.body.cpf, req.body.email, req.body.telefone)
                 
                 const hospede = req.body
                 
