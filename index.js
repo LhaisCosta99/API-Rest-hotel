@@ -17,7 +17,7 @@ const password = process.env.PASSWORD
 const database = process.env.DATABASE
 
 app.use(express.json())
-app.use(cors())
+app.use(cors("*"))
 
 try {
     await mongoose.connect(`mongodb+srv://${user}:${password}@cluster0.vqfs4id.mongodb.net/${database}?retryWrites=true&w=majority`)
