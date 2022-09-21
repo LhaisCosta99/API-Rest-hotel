@@ -106,7 +106,7 @@ class HospedesController{
 
                 delete hospede._id
 
-                ValidacoesHospede.validaHospede(hospede.nome, hospede.cpf, hospede.email, hospede.telefone)
+                // ValidacoesHospede.validaHospede(hospede.nome, hospede.cpf, hospede.email, hospede.telefone)
                 const resposta = await HospedesRepository.atualizaHospedePorEmail(email, hospede)
 
                 res.status(200).json(resposta)
