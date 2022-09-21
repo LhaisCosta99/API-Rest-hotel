@@ -27,9 +27,9 @@ class QuartosController{
 
         app.post("/quartos", async (req, res) => {
             try {
-                if (criado != null || criado != undefined) {
-                    throw new Error("Já existe um quarto com este número")
-                }
+                // if (criado != null || criado != undefined) {
+                //     throw new Error("Já existe um quarto com este número")
+                // }
 
                 const quarto = req.body
 
