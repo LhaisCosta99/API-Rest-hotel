@@ -10,7 +10,7 @@ import cors from "cors"
 dotenv.config()
 
 const app = express()
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3001
 const environment = process.env.ENVIRONMENT || "DEV"
 const user = process.env.USER_DB
 const password = process.env.PASSWORD
