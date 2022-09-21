@@ -92,7 +92,7 @@ class HospedesController{
             
         })
 
-        app.patch("/hospedes/update/email", async (req, res)=>{
+        app.post("/hospedes/update/email", async (req, res)=>{
             const email = req.body.email
             const body = Object.entries(req.body)
             try {                
